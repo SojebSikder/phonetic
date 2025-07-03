@@ -52,3 +52,9 @@ func main() {
     fmt.Println(rulebasedConv.Transliterate("ami ekjon valO manuSh")) //আমি একজন ভালো মানুষ
 }
 ```
+
+## Tests
+
+```bash
+go test ./...
+```

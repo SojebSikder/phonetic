@@ -1,8 +1,9 @@
 package rulebasedconverter
 
 import (
-	"sojebsikder/phonetic/internal/trie"
 	"strings"
+
+	"github.com/sojebsikder/phonetic/internal/trie"
 )
 
 type Converter struct {
@@ -21,17 +22,6 @@ func NewConverter() *Converter {
 
 }
 
-// func BuildTrieFromMaps() *trie.Trie {
-// 	t := trie.NewTrie()
-// 	for key := range consonants {
-// 		t.AddWord(key)
-// 	}
-// 	for key := range vowels {
-// 		t.AddWord(key)
-// 	}
-// 	return t
-// }
-
 // Maps for phonetic to Bangla
 // Consonants map: phonetic consonant → Bangla consonant
 var consonants = map[string]string{
@@ -43,9 +33,7 @@ var consonants = map[string]string{
 
 // Vowels (standalone) map: phonetic vowel → Bangla vowel letter
 var vowels = map[string]string{
-	"a": "আ", "aa": "আ", "i": "ই", "ii": "ঈ", "u": "উ", "uu": "ঊ",
-	"e": "এ", "oi": "ঐ", "o": "অ", "ou": "ঔ",
-	"O": "ও", "Ou": "ঔ",
+	"o": "অ", "a": "আ", "i": "ই", "I": "ঈ", "u": "উ", "U": "ঊ", "rri": "ঋ", "e": "এ", "OI": "ঐ", "O": "ও",
 }
 
 // Matras map: phonetic vowel → vowel sign (matra)

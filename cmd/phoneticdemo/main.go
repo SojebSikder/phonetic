@@ -3,8 +3,9 @@ package main
 import (
 	"fmt"
 	"log"
-	"sojebsikder/phonetic/internal/trie"
-	"sojebsikder/phonetic/pkg/rulebasedconverter"
+
+	"github.com/sojebsikder/phonetic/internal/trie"
+	"github.com/sojebsikder/phonetic/pkg/rulebasedconverter"
 )
 
 func main() {
