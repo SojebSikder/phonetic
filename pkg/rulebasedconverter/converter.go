@@ -5,6 +5,33 @@ import (
 	"strings"
 )
 
+type Converter struct {
+	trie *trie.Trie
+}
+
+func NewConverter() *Converter {
+	t := trie.NewTrie()
+	for key := range consonants {
+		t.AddWord(key)
+	}
+	for key := range vowels {
+		t.AddWord(key)
+	}
+	return &Converter{trie: t}
+
+}
+
+// func BuildTrieFromMaps() *trie.Trie {
+// 	t := trie.NewTrie()
+// 	for key := range consonants {
+// 		t.AddWord(key)
+// 	}
+// 	for key := range vowels {
+// 		t.AddWord(key)
+// 	}
+// 	return t
+// }
+
 // Maps for phonetic to Bangla
 // Consonants map: phonetic consonant → Bangla consonant
 var consonants = map[string]string{
@@ -37,26 +64,15 @@ func isConsonant(s string) bool {
 	return ok
 }
 
-func BuildTrieFromMaps() *trie.Trie {
-	t := trie.NewTrie()
-	for key := range consonants {
-		t.AddWord(key)
-	}
-	for key := range vowels {
-		t.AddWord(key)
-	}
-	return t
-}
-
 // Transliterate converts a phonetic input string to Bangla script using matra logic.
-func Transliterate(input string, t *trie.Trie) string {
+func (c *Converter) Transliterate(input string) string {
 	runes := []rune(input)
 	var output strings.Builder
 
 	lastWasConsonant := false
 
 	for i := 0; i < len(runes); {
-		match, length := t.MatchLongestPrefix(runes, i)
+		match, length := c.trie.MatchLongestPrefix(runes, i)
 		if match == "" {
 			// fallback: output original char
 			output.WriteRune(runes[i])

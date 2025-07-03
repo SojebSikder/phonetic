@@ -5,7 +5,7 @@ import (
 )
 
 func TestTransliterate(t *testing.T) {
-	trie := BuildTrieFromMaps()
+	rulebasedConv := NewConverter()
 
 	tests := []struct {
 		word     string
@@ -19,7 +19,7 @@ func TestTransliterate(t *testing.T) {
 	for _, test := range tests {
 		test := test
 		t.Run(test.word, func(t *testing.T) {
-			result := Transliterate(test.word, trie)
+			result := rulebasedConv.Transliterate(test.word)
 			if result != test.expected {
 				t.Errorf("Transliterate(%q) = %q; want %q", test.word, result, test.expected)
 			}

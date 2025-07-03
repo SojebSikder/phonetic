@@ -24,8 +24,8 @@ func main() {
 	}
 
 	// Transliteration
-	trie := rulebasedconverter.BuildTrieFromMaps()
-	fmt.Println(rulebasedconverter.Transliterate("ami bangla valObasi", trie))   // আমি বাংলা ভালোবাসি
-	fmt.Println(rulebasedconverter.Transliterate("sojib sOjib", trie))           // সজিব সোজিব
-	fmt.Println(rulebasedconverter.Transliterate("ami ekjon valO manuSh", trie)) //আমি একজন ভালো মানুষ
+	rulebasedConv := rulebasedconverter.NewConverter()
+	fmt.Println(rulebasedConv.Transliterate("ami bangla valObasi"))   // আমি বাংলা ভালোবাসি
+	fmt.Println(rulebasedConv.Transliterate("sojib sOjib"))           // সজিব সোজিব
+	fmt.Println(rulebasedConv.Transliterate("ami ekjon valO manuSh")) //আমি একজন ভালো মানুষ
 }
