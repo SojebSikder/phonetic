@@ -49,7 +49,7 @@ func main() {
     rulebasedConv := rulebasedconverter.NewConverter()
     fmt.Println(rulebasedConv.Transliterate("ami bangla valObasi"))   // আমি বাংলা ভালোবাসি
     fmt.Println(rulebasedConv.Transliterate("sojib sOjib"))           // সজিব সোজিব
-    fmt.Println(rulebasedConv.Transliterate("ami ekjon valO manuSh")) //আমি একজন ভালো মানুষ
+    fmt.Println(rulebasedConv.Transliterate("ami ekjon valO manuSh")) // আমি একজন ভালো মানুষ
 }
 ```
 
@@ -57,4 +57,6 @@ func main() {
 
 ```bash
 go test ./...
+# with benchmark
+go test ./... -bench=.
 ```

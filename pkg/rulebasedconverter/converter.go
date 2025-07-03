@@ -34,6 +34,7 @@ var consonants = map[string]string{
 // Vowels (standalone) map: phonetic vowel → Bangla vowel letter
 var vowels = map[string]string{
 	"o": "অ", "a": "আ", "i": "ই", "I": "ঈ", "u": "উ", "U": "ঊ", "rri": "ঋ", "e": "এ", "OI": "ঐ", "O": "ও",
+	"OU": "ঔ", ".": "।", "$": "৳",
 }
 
 // Matras map: phonetic vowel → vowel sign (matra)
