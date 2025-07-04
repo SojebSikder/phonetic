@@ -14,7 +14,7 @@ This Go package provides a rule-based transliteration engine that converts phone
 For testing, run the following command:
 
 ```bash
-go run ./cmd/phoneticdemo
+go run ./cmd/phoneticdemo convert "amar nam sojib"
 ```
 
 ## Installation
