@@ -54,7 +54,7 @@ func isConsonant(s string) bool {
 }
 
 // Transliterate converts a phonetic input string to Bangla script using matra logic.
-func (c *Converter) Transliterate(input string) string {
+func (c *Converter) Convert(input string) string {
 	runes := []rune(input)
 	var output strings.Builder
 

@@ -19,9 +19,9 @@ func TestTransliterate(t *testing.T) {
 	for _, test := range tests {
 		test := test
 		t.Run(test.word, func(t *testing.T) {
-			result := rulebasedConv.Transliterate(test.word)
+			result := rulebasedConv.Convert(test.word)
 			if result != test.expected {
-				t.Errorf("Transliterate(%q) = %q; want %q", test.word, result, test.expected)
+				t.Errorf("Convert(%q) = %q; want %q", test.word, result, test.expected)
 			}
 		})
 	}

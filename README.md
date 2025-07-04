@@ -17,6 +17,12 @@ For testing, run the following command:
 go run ./cmd/phoneticdemo
 ```
 
+## Installation
+
+```bash
+go get -u github.com/SojebSikder/phonetic
+```
+
 ## Usage
 
 ```go
@@ -25,8 +31,8 @@ package main
 import (
     "fmt"
     "log"
-    "sojebsikder/phonetic/internal/trie"
-    "sojebsikder/phonetic/rulebasedconverter"
+    "github.com/sojebsikder/phonetic/internal/trie"
+    "github.com/sojebsikder/phonetic/rulebasedconverter"
 )
 
 func main() {
@@ -47,9 +53,9 @@ func main() {
 
     // Transliteration
     rulebasedConv := rulebasedconverter.NewConverter()
-    fmt.Println(rulebasedConv.Transliterate("ami bangla valObasi"))   // আমি বাংলা ভালোবাসি
-    fmt.Println(rulebasedConv.Transliterate("sojib sOjib"))           // সজিব সোজিব
-    fmt.Println(rulebasedConv.Transliterate("ami ekjon valO manuSh")) // আমি একজন ভালো মানুষ
+    fmt.Println(rulebasedConv.Convert("ami bangla valObasi"))   // আমি বাংলা ভালোবাসি
+    fmt.Println(rulebasedConv.Convert("sojib sOjib"))           // সজিব সোজিব
+    fmt.Println(rulebasedConv.Convert("ami ekjon valO manuSh")) // আমি একজন ভালো মানুষ
 }
 ```
 
