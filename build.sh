@@ -13,7 +13,7 @@ for platform in "${platforms[@]}"; do
     fi
 
     echo "Building for $OS $ARCH..."
-    GOOS=$OS GOARCH=$ARCH go build -o "$OUTPUT" ./cmd/phoneticdemo
+    GOOS=$OS GOARCH=$ARCH go build -o "$OUTPUT" .
 done
 
 echo "Build completed!"

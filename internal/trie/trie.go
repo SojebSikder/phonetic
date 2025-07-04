@@ -2,6 +2,7 @@ package trie
 
 import (
 	"bufio"
+	"bytes"
 	"os"
 	"strings"
 )
@@ -109,5 +110,24 @@ func LoadFromFile(path string) (*Trie, error) {
 		trie.AddWord(scanner.Text())
 	}
 	return trie, scanner.Err()
+}
 
+func LoadFromBytes(data []byte) (*Trie, error) {
+	trie := NewTrie()
+
+	scanner := bufio.NewScanner(bytes.NewReader(data))
+	for scanner.Scan() {
+		trie.AddWord(scanner.Text())
+	}
+	return trie, scanner.Err()
+}
+
+func LoadFromString(data string) (*Trie, error) {
+	trie := NewTrie()
+
+	scanner := bufio.NewScanner(strings.NewReader(data))
+	for scanner.Scan() {
+		trie.AddWord(scanner.Text())
+	}
+	return trie, scanner.Err()
 }

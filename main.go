@@ -7,7 +7,12 @@ import (
 
 	"github.com/sojebsikder/phonetic/internal/trie"
 	"github.com/sojebsikder/phonetic/rulebasedconverter"
+
+	_ "embed"
 )
+
+//go:embed data/bn.txt
+var bnData []byte
 
 var version = "0.0.1"
 var appName = "phonetic"
@@ -45,7 +50,7 @@ func main() {
 		}
 		word := os.Args[2]
 
-		t, err := trie.LoadFromFile("data/bn.txt")
+		t, err := trie.LoadFromBytes(bnData)
 		if err != nil {
 			log.Fatalf("Failed to load dictionary: %v", err)
 		}
